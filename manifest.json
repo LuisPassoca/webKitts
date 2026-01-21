@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "webKitts",
+  "version": "1.0",
+  "description": "Virtual cat companions for Google Chrome.",
+
+  "action": {"default_popup": "settings.html"},
+
+  "content_scripts": [{
+      "matches": ["<all_urls>"],
+      "js": ["extension.js"],
+      "css": ["assets/css/style.css"],
+      "run_at": "document_idle"
+  }],
+
+  "web_accessible_resources": [{
+      "resources": ["assets/**"],
+      "matches": ["<all_urls>"]
+  }],
+
+  "icons": {"512": "assets/icons/512.png"},
+
+  "permissions": ["storage"]
+}

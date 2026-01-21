@@ -1,0 +1,90 @@
+body {
+    font-family: cursive;
+    padding: 10px;
+}
+
+#title {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-bottom: 10px;
+    align-items: center;
+
+    #logo {
+        aspect-ratio: 128 / 39;
+        width: 200px;
+        height: auto;
+        background-size: cover;
+        margin-right: 12px;
+    }
+
+    input[type="checkbox"] {
+        pointer-events: none !important;
+        transform: scale(2);
+        margin-right: 15px;
+        cursor: pointer;
+    }   
+}
+
+.button {
+    background-size: cover;
+    aspect-ratio: 1/1;
+    width: 75px;
+    height: auto;
+    transition: width 0.5s, height 0.5s;
+}
+
+#buttons-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+    height: fit-content;
+    margin-bottom: 10px;
+}
+
+.button-container {
+    text-align: center;
+}
+
+.button-container:hover {
+    cursor: pointer;
+}
+
+#resize-container {
+    display: none;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 2px dashed gray;
+    padding: 10px;
+}
+
+#resize-slider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    input[type="text"] {
+        width: 22px;
+        border: none;
+        border-bottom: 1px solid rgb(58, 58, 58) ;
+    }
+
+    #slider-input {
+        width: 175px;
+    }
+}
+
+#options-wrapper {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 2px dashed gray;
+}
+
+#bottom-text {
+    text-align: right;
+}
+
+.false {
+    background-color: red;
+}

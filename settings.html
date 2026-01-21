@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/settings.css">
+</head>
+<body>
+
+    <div id="title" title="Enable the extension">
+        <div id="logo"></div>
+        <input type="checkbox" id="enabled-checkbox">
+    </div>
+
+    <div id="options-wrapper">
+        <div id="buttons-wrapper">
+            <div class="button-container" id="audio-button">
+                <div class="button" title="Toggle extension audio"></div>
+                <b>Audio</b>
+            </div>
+
+            <div class="button-container" id="move-button">
+                <div class="button" title="Toggle cat movement"></div>
+                <b>Move</b>
+            </div>
+
+            <div class="button-container" id="resize-button">
+                <div class="button" title="Resize cat"></div>
+                <b>Resize</b>
+            </div>
+        </div>
+        
+        <div id="resize-container">
+            <label for="slider-input">Cat scale:</label>
+            <div id="resize-slider">
+                <input type="range" id="slider-input" min="100" max="500" value="100">
+                <input type="text" id="slider-value" value="100">
+                <label for="text">px.</label>
+            </div>
+        </div>
+    </div>
+
+    <div id="bottom-text">
+        <span>by LuisPassoca</span>
+        <span>https://passoca.neocities.org/</span>
+    </div>
+
+    <script src="settings.js"></script>
+</body>
+</html>

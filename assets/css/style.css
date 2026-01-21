@@ -1,0 +1,38 @@
+.catElement {
+    display: none;
+    inset: 0;
+    position: fixed;
+    z-index: 9999;
+    width: fit-content;
+    height: fit-content;
+
+    .sprite {
+        aspect-ratio: 1/1;
+        width: 100px;
+        height: auto;
+        background-size: cover;
+        cursor: grab;
+    }
+
+    .sprite:active {
+        cursor: grabbing;
+    }
+
+    .name {
+        display: none;
+        font-family: cursive;
+        text-align: center;
+        cursor: text;
+    }
+}
+
+.disableHover {
+    pointer-events: none !important;
+
+    .catElement {
+        pointer-events: all !important;
+    }
+}
+
+
+
