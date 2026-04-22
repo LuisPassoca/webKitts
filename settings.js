@@ -76,24 +76,29 @@ let settingsData = {
 //Read data and change buttons accordingly
 chrome.storage.local.get(['settings'], (result) => {
     if (result.settings) {
-        settingsData = result.settings;
-        
-        title.checkbox.checked = settingsData.enable;
-
-        moveButton.image.style.backgroundImage = `url('${filePath}assets/images/moveButton${settingsData.move}.png')`
-        audioButton.image.style.backgroundImage = `url('${filePath}assets/images/audioButton${settingsData.audio}.png')`
-
-        resizeButton.slider.value = settingsData.scale
-        resizeButton.sliderText.value = settingsData.scale
+        settingsData = {
+            ...settingsData,
+            ...result.settings
+        };
     }
+        
+    title.checkbox.checked = settingsData.enable;
+
+    moveButton.image.style.backgroundImage = `url('${filePath}assets/images/moveButton${settingsData.move}.png')`
+    audioButton.image.style.backgroundImage = `url('${filePath}assets/images/audioButton${settingsData.audio}.png')`
+
+    resizeButton.slider.value = settingsData.scale
+    resizeButton.sliderText.value = settingsData.scale
 })
 
 //Logo animation
 function animateLogo(currentFrame) {
-    currentFrame += 1;
-    if (currentFrame > 3) {currentFrame = 1}
+    if (settingsData.enable) {
+        currentFrame += 1;
+        if (currentFrame > 3) {currentFrame = 1}
 
-    title.image.style.backgroundImage = `url('${filePath}assets/images/logo${currentFrame}.png')`
+        title.image.style.backgroundImage = `url('${filePath}assets/images/logo${currentFrame}.png')`
+    }
 
     setTimeout(() => {
         animateLogo(currentFrame)
@@ -101,7 +106,6 @@ function animateLogo(currentFrame) {
 }
 
 animateLogo(1);
-
 
 //Setup buttons
 title.element.addEventListener('click', () => {

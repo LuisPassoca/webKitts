@@ -353,7 +353,12 @@ function loadCat() {
 
 function runExtension() {
     chrome.storage.local.get(['settings'], (result) => {
-        if (result.settings) {settingsData = result.settings};
+        if (result.settings) {
+            settingsData = {
+                ...settingsData,
+                ...result.settings
+            }
+        };
         
         if ((catData.x == 0) && (catData.y == 0)) {
             catData.x = randomRange(0, window.innerWidth - settingsData.scale)
@@ -367,7 +372,7 @@ function runExtension() {
 
 chrome.storage.onChanged.addListener((change, area) => {
     //Triggers when settings are changed
-    if ((area != 'local') || (document.visibilityState !== 'visible') || (!change?.settings?.oldValue)) {return};
+    if ((area != 'local') || (document.visibilityState !== 'visible') || (!change?.settings)) {return};
     
     settingsData = change.settings.newValue
     
