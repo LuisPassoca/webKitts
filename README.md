@@ -12,7 +12,7 @@
 
 ## What is webKitts?
 WebKitts is a fun and simple Chrome Extension that adds a feline companion to your web browser to keep you entertained while you surf the web! 
-The project was developed using plain JavaScript, HTML, CSS and Chrome's Extensions API (Manifest V3)
+The project was developed using plain JavaScript, HTML, CSS and Chrome's Extensions API (Manifest V3).
 
 ## How does it work?
 WebKitts works by manipulating the website's DOM, inserting the cat and its styling onto the currently loaded page. In addition, it makes use of timeouts, for both the action and animation cycles. Lastly, it utilizes Chrome's native storage API to save and load custom user settings.
